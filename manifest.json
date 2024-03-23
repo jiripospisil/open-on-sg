@@ -1,0 +1,21 @@
+{
+  "name": "Open on Sourcegraph",
+  "description": "Opens the current repository or file on Sourcegraph.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "out/open_url.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["out/github.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sourcegraph-mark.svg"],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}

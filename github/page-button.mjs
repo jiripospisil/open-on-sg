@@ -34,7 +34,7 @@ function onClick(event) {
 
   chrome.runtime.sendMessage({
     url: toOpen,
-    new_tab: event.metaKey || event.altKey,
+    new_tab: event.metaKey || event.ctrlKey,
   });
 }
 
